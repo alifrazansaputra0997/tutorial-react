@@ -5,6 +5,10 @@ import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from './components/TabButton/TabButton';
 
 function App() {
+  function onSelect(){
+    console.log('onSelect parent')
+  }
+
   return (
     <div>
       <Header />
@@ -34,10 +38,11 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>Components2</TabButton>
-            <TabButton>Components3</TabButton>
+            <TabButton onSelect={onSelect}>Components</TabButton>
+            <TabButton onSelect={onSelect}>Components2</TabButton>
+            <TabButton onSelect={onSelect}>Components3</TabButton>
           </menu>
+          Dynamic Content
         </section>
       </main>
     </div>
