@@ -5,8 +5,8 @@ import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from './components/TabButton/TabButton';
 
 function App() {
-  function onSelect(){
-    console.log('onSelect parent')
+  function onSelect(param){
+    console.log('onSelect parent', param)
   }
 
   return (
@@ -38,9 +38,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={onSelect}>Components</TabButton>
-            <TabButton onSelect={onSelect}>Components2</TabButton>
-            <TabButton onSelect={onSelect}>Components3</TabButton>
+            <TabButton onSelect={() => onSelect('componets')}>Components</TabButton>
+            <TabButton onSelect={() => onSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => onSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => onSelect('state')}>State</TabButton>
           </menu>
           Dynamic Content
         </section>
