@@ -16,18 +16,18 @@ function App() {
     setSelectedTopic(param);
   }
 
-  let tabContent = <p>Please select a topic.</p>
-  if(selectedTopic){
-    tabContent = (
-      <div id="tab-content">
-        <h3>{EXAMPLES[selectedTopic].title}</h3>
-        <p>{EXAMPLES[selectedTopic].description}</p>
-        <pre>
-          <code>{EXAMPLES[selectedTopic].code}</code>
-        </pre>
-      </div>
-    );
-  }
+  // let tabContent = <p>Please select a topic.</p>
+  // if(selectedTopic){
+  //   tabContent = (
+  //     <div id="tab-content">
+  //       <h3>{EXAMPLES[selectedTopic].title}</h3>
+  //       <p>{EXAMPLES[selectedTopic].description}</p>
+  //       <pre>
+  //         <code>{EXAMPLES[selectedTopic].code}</code>
+  //       </pre>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
@@ -64,7 +64,16 @@ function App() {
             <TabButton onSelect={() => onSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => onSelect("state")}>State</TabButton>
           </menu>
-          {tabContent}
+          {!selectedTopic ? <p>Please select a topic.</p> : null}
+          {selectedTopic ? (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          ) : null}
         </section>
       </main>
     </div>
