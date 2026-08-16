@@ -9,6 +9,8 @@ import { EXAMPLES } from "./data.js";
 import CoreConcepts from "./components/CoreConcepts.jsx";
 import Examples from "./components/Examples.jsx";
 
+import ButtonPage from "./practices/practice-15/ButtonPage.jsx";
+
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
 
@@ -31,17 +33,20 @@ function App() {
   }
 
   return (
-    <div>
-      <Header />
-      <main>
-        <CoreConcepts CORE_CONCEPTS={CORE_CONCEPTS} />
-        <Examples
-          onSelect={(param) => handleSelect(param)}
-          selectedTopic={selectedTopic}
-          tabContent={tabContent}
-        />
-      </main>
-    </div>
+    <>
+      <ButtonPage />
+    </>
+    // <div>
+    //   <Header />
+    //   <main>
+    //     <CoreConcepts CORE_CONCEPTS={CORE_CONCEPTS} />
+    //     <Examples
+    //       onSelect={(param) => handleSelect(param)}
+    //       selectedTopic={selectedTopic}
+    //       tabContent={tabContent}
+    //     />
+    //   </main>
+    // </div>
   );
 }
 
