@@ -10,6 +10,7 @@ export default function Examples({ onSelect, selectedTopic, tabContent }) {
   return (
     <Section id="examples" title="Examples">
       <Tabs
+        ButtonsContainer="menu"
         buttons={
           <>
             <TabButton
