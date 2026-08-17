@@ -3,13 +3,14 @@ import { useState } from "react";
 export default function Player({ PlayerName, PlayerSymbol, onEdit }) {
   const [isEditPlayer, setIsEditPlayer] = useState(false);
   const PlayerInputSpan = isEditPlayer ? (
-    <input type="text" required/>
+    <input type="text" required value={PlayerName}/>
   ) : (
     <span className="player-name">{PlayerName}</span>
   );
+  const buttonCaption = isEditPlayer ? <button onClick={onEditAct}>Save</button> : <button onClick={onEditAct}>Edit</button>
 
   function onEditAct() {
-    setIsEditPlayer(true);
+    setIsEditPlayer(!isEditPlayer);
   }
 
   return (
@@ -19,7 +20,7 @@ export default function Player({ PlayerName, PlayerSymbol, onEdit }) {
         {/* <span className="player-name">{PlayerName}</span> */}
         <span className="player-symbol">{PlayerSymbol}</span>
       </span>
-      <button onClick={onEditAct}>Edit</button>
+      {buttonCaption}
     </li>
   );
 }
