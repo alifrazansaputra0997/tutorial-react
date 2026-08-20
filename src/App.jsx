@@ -1,14 +1,14 @@
 import Player from "./components/Player/Player";
-
+import GameBoard from "./components/GameBoard/GameBoard";
 function App() {
 
   const listPlayer = [
     {
-      playerName: "Alif",
+      playerName: "Player 1",
       playerSymbol: "X",
     },
     {
-      playerName: "Razan",
+      playerName: "Player 2",
       playerSymbol: "O",
     },
   ];
@@ -17,7 +17,7 @@ function App() {
     return (
       <Player
         key={item.playerName}
-        PlayerName={item.playerName}
+        initialName={item.playerName}
         PlayerSymbol={item.playerSymbol}
         onEdit={(param) => onEdit(param)}
 
@@ -33,6 +33,7 @@ function App() {
     <main>
       <div id="game-container">
         <ol id="players">{PlayerSection}</ol>
+        <GameBoard />
       </div>
     </main>
   );
